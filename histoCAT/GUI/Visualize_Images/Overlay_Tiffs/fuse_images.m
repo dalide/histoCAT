@@ -95,7 +95,7 @@ else
 end
 
 %If multiple channels are selected
-if numel(sel_channels) > 1
+if numel(sel_channels) > 0
     
     %Set up legend of which color correspond to which channel
     string_channels = retr('list_channels');
