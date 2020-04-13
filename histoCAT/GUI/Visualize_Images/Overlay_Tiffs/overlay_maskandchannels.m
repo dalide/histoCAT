@@ -88,7 +88,7 @@ for imh = 1:length(gate_names)
     plotAreaXY(tabchild,imh,imageids,sample_orderIDX);
     
     %If 'Heatmap channel on selected samples', 'Highlight sample on Tiff images' or
-    %'Highlight area excluding selected sample' are sekected from the View Options
+    %'Highlight area excluding selected sample' are selected from the View Options
     %drop down menu and the segmentation mask for the current image is not empty
     if ((strcmp(handles.visualize_options.String{handles.visualize_options.Value},'Heatmap channel on selected samples') == 1) || ...
             (strcmp(handles.visualize_options.String{handles.visualize_options.Value},'Highlight sample on Tiff images') == 1) || ...
