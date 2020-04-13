@@ -35,7 +35,7 @@ if strcmp(batch,'Current image')
     copyobj(tab.Children,currentfig);
 
     %Ask user for the folder to save it in
-    [filename,path]=uiputfile('*.jpeg','Save Tiff');
+    [filename,path]=uiputfile('*.png','Save Tiff');
 
     %If no path found
     if path==0
@@ -65,7 +65,7 @@ else
 
         if ~exist('filename','var')  
             %Ask user for the folder to save it in
-            [filename,path]=uiputfile('*.jpeg','Save Tiff');
+            [filename,path]=uiputfile('*.png','Save Tiff');
         end
 
         %If no path found
