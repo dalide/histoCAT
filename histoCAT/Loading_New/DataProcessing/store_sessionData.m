@@ -105,7 +105,7 @@ else
     start = last_gate_ind+1;
 end
 
-disp(sprintf('Allocated space for data: %gs',toc));
+fprintf('Allocated space for data: %gs\n',toc);
 
 
 %Time again
