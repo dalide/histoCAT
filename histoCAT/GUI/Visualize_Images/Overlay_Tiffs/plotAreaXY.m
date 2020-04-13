@@ -51,7 +51,7 @@ clr = distinguishable_colors(numel(imageids));
 %Create dummy third dimension
 vColor_discrete = vColor;
 colors = unique(vColor)';
-for ci=1:numel(colors);
+for ci=1:numel(colors)
     vColor_discrete(vColor==colors(ci)) = ci;
 end
             
