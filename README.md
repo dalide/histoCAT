@@ -40,3 +40,7 @@ All other data associated with the Nature Methods publication can be found here:
 
 Please use MATLAB2014b and load the full histoCAT folder into your MATLAB path. Run `histoCAT.m` to start histoCAT from source.
 
+## Personal customized change
+
+Since I only have Matlab 2018a and above, I need to modify some codes to fit the newer version of Matlab. Also I need to add some 
+customized functionalities to fit my needs. Please refer to the official Bodenmiller lab Github for official HistoCAT software. 
