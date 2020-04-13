@@ -78,7 +78,7 @@ if length(tiff_matrix{1,imh})<=6
             disp('Applying contrast to image to display all markers')
             intensemask =  imadjust(tiffimage_read);
         else
-            intensemask =  tiffimage_read;
+            intensemask =  imadjust(tiffimage_read);%tiffimage_read;
         end
         
         %Set the alphadata of the RGB image to the adjusted grayimage
