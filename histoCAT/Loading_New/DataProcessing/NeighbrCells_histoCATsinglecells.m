@@ -129,7 +129,10 @@ cur_cells(:,idx_cur) = Current_singlecellinfo;
 
 %Add variable names as table
 try
-    temp_tableSinglecells = array2table(cur_cells,'VariableNames',allvarnames);
+    removesplcharacters = regexprep(allvarnames,'[^a-zA-Z0-9_]','');
+    remove_beginnum = regexprep(removesplcharacters,'^[0-9]*','');
+    temp_tableSinglecells = array2table(cur_cells,'VariableNames',remove_beginnum);
+%     temp_tableSinglecells = array2table(cur_cells,'VariableNames',allvarnames);
 catch
     removesplcharacters = regexprep(allvarnames,'[^a-zA-Z0-9_]','');
     remove_beginnum = regexprep(removesplcharacters,'^[0-9]*','');
