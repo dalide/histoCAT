@@ -50,7 +50,9 @@ if length(tiff_matrix{1,imh})<=6
         
         %If it is the first image, set background as the BWimage
         if k == 1
-            blackim = imshow(tiffimage_read);
+%             blackim = imshow(tiffimage_read);
+            allblack = cat(3, zeros(size(tiffimage_read)),zeros(size(tiffimage_read)),zeros(size(tiffimage_read)));
+            blackim = imshow(allblack);
             set(blackim,'Tag','firstgrayimage');
             hold on;
         end
