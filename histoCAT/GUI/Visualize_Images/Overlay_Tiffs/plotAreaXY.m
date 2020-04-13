@@ -36,7 +36,7 @@ if isempty(areaXY) == 1
 %If centroids were found, extract x and y variables for plotting
 else
     vX_olay = cellfun(@(x) double(x(:,1)),areaXY)';
-    vY_olay = cellfun(@(x) x(:,2),areaXY)';
+    vY_olay = cellfun(@(x) double(x(:,2)),areaXY)';
     vColor = [vColor; ones(size(areaXY,2), 1)*1];
     vZ_olay = vColor;
     
