@@ -97,7 +97,7 @@ if loadflag == 1
     end
     
     % Check if folder exist. If not, please create directory
-    if ~exist(custom_gatesfolder)
+    if ~exist(custom_gatesfolder, 'dir')
         mkdir(custom_gatesfolder);
         disp(['All your custom gates will be saved in this folder ' custom_gatesfolder]);       
     end
