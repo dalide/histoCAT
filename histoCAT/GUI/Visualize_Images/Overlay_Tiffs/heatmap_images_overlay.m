@@ -88,10 +88,11 @@ set(cbr,'YTickLabel',ylab);
 freezeColors;
 
 %Set position of colorbar
-cbr.Position = [0.1542 0.022 0.7274 0.0200];
+% cbr.Position = [0.1542 0.022 0.7274 0.0200];
 
 %Tag the image
 set(intenseim,'Tag','rgbimage1');
+
 
 end
 
