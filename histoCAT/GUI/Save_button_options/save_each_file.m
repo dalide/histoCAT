@@ -41,6 +41,7 @@ for i=1:size(gates,1)
    
    % column names exclude neighbor cells columns
    channels = T.Properties.VariableNames(getNtneigh);
+   channels = cellfun(@(x) replace(x,'Cell_enh_',''), channels, 'UniformOutput', false);
    neighbor = T.Properties.VariableNames(getneigh);
    
    % save single cell infomation as fcs
