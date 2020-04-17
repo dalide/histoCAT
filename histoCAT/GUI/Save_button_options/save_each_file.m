@@ -28,6 +28,7 @@ if ~exist(neighbor_folder, 'dir')
     mkdir(neighbor_folder)
 end
 
+file_name = cell(1, size(gates,1));
 ImageId = cell(1,size(gates,1));
 SampleId = cell(1,size(gates,1));
 TotalArea = cell(1, size(gates,1));
@@ -66,13 +67,14 @@ for i=1:size(gates,1)
    
    
    % save metadata 
+   file_name{1,i} = fcs_filename;
    ImageId{1,i} = T{1,1};
    SampleId{1,i} = gates{i,1};
    TotalArea{1,i} = size(Mask_all(i).Image,1)*size(Mask_all(i).Image,2)/1e6;
 
 end
 
-metadata_table = table(ImageId', SampleId', TotalArea', 'VariableName', {'ImageId','SampleId', 'TotalArea'});
+metadata_table = table(file_name', ImageId', SampleId', TotalArea', 'VariableName', {'file_name','ImageId','SampleId', 'TotalArea'});
 metadata_filename = 'metadata.csv';
 metadata_output = fullfile(custom_gatesfolder, metadata_filename);
 writetable(metadata_table, metadata_output, 'WriteRowNames', true);
