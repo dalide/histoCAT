@@ -39,9 +39,11 @@ for i=1:size(gates,1)
    getNtneigh = cell2mat(cellfun(@(x) ~strncmp('neighbour',x,9), T.Properties.VariableNames, 'UniformOutput',false));
    getneigh = cell2mat(cellfun(@(x) strncmp('neighbour',x,9), T.Properties.VariableNames, 'UniformOutput',false));
    
+   T.Properties.VariableNames = cellfun(@(x) replace(x,'Cell_enh_',''), T.Properties.VariableNames, 'UniformOutput', false);
+   T.Properties.VariableNames = cellfun(@(x) replace(x,'Cell_',''), T.Properties.VariableNames, 'UniformOutput', false);
    % column names exclude neighbor cells columns
    channels = T.Properties.VariableNames(getNtneigh);
-   channels = cellfun(@(x) replace(x,'Cell_enh_',''), channels, 'UniformOutput', false);
+%    channels = cellfun(@(x) replace(x,'Cell_enh_',''), channels, 'UniformOutput', false);
    neighbor = T.Properties.VariableNames(getneigh);
    
    % save single cell infomation as fcs
