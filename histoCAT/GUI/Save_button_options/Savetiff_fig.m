@@ -26,7 +26,7 @@ end
 if strcmp(batch,'Current image')
 
     %Open new figure
-    currentfig=figure;
+    currentfig=figure('Position',get(0, 'Screensize'));
 
     %Get only the image in the currently selected tab
     tab = tabmaster_histonetiff.SelectedTab;
@@ -55,7 +55,7 @@ else
     for i=1:size(all_tabs,1)
 
         %Open new figure
-        currentfig=figure;
+        currentfig=figure('Position',get(0, 'Screensize'));
         
         %Get only the image in the current tab of iteration
         tab = get(all_tabs(i,:).Parent);

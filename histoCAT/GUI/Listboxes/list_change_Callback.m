@@ -48,7 +48,7 @@ if strcmp(handles.visualize_options.String{handles.visualize_options.Value},...
         origname = origstring{valchannel(1)};
         
         %Sample html to update as red
-        htmlname = sprintf('<HTML><BODY bgcolor="%s">%s</BODY></HTML>', 'red', origname);
+        htmlname = sprintf('<HTML><BODY bgcolor="%s">%s</BODY></HTML>', 'blue', origname);
         %Store the channel's name as the htmlname
         origstring{valchannel(1)} = htmlname;
         
@@ -64,7 +64,7 @@ if strcmp(handles.visualize_options.String{handles.visualize_options.Value},...
         origname = origstring{valchannel(2)};
         
         %Sample html to update as green
-        htmlname = sprintf('<HTML><BODY bgcolor="%s">%s</BODY></HTML>', 'green', origname);
+        htmlname = sprintf('<HTML><BODY bgcolor="%s">%s</BODY></HTML>', 'red', origname);
         %Store the second channel's string as the htmlname
         origstring{valchannel(2)} = htmlname;
         
@@ -80,7 +80,7 @@ if strcmp(handles.visualize_options.String{handles.visualize_options.Value},...
         origname = origstring{valchannel(3)};
         
         %Sample html to update as blue
-        htmlname = sprintf('<HTML><BODY bgcolor="%s">%s</BODY></HTML>', 'blue', origname);
+        htmlname = sprintf('<HTML><BODY bgcolor="%s">%s</BODY></HTML>', 'green', origname);
         %Store the third channel's string as the htmlname
         origstring{valchannel(3)} = htmlname;
         

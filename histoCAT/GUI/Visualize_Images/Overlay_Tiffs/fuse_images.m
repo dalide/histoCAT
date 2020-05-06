@@ -24,8 +24,8 @@ global Mask_all
 [sel_channels,tiff_matrix] = Comparetiffnames_tolistchannels(Mask_all);
 
 %Store the colormap based on the number of selected channels
-%in order: 'r','g','b','c','m','y'
-colorstouse = [[1 0 0];[0 1 0];[0 0 1];[0 1 1];[1 0 1];[1 1 0]];
+%in order: 'b','r','g','c','m','y'
+colorstouse = [[0 0 1];[1 0 0];[0 1 0];[0 1 1];[1 0 1];[1 1 0]];
 
 %If no axes found, create one
 if isempty(tab_axes) == 1
@@ -99,13 +99,17 @@ if numel(sel_channels) > 0
     
     %Set up legend of which color correspond to which channel
     string_channels = retr('list_channels');
+%     disp(strrep(string_channels(sel_channels), 'Cell_',''));
+    remove_metal = split(string_channels(sel_channels),"_");
+    remove_metal = remove_metal(:,:,end);
+    
     La = line(ones(numel(sel_channels)),ones(numel(sel_channels)),'LineWidth',2,'Parent',tabchild.Children.findobj('Type','axes'));
     set(La,{'color'},mat2cell(colorstouse(1:numel(sel_channels),:),ones(1,numel(sel_channels)),3)); freezeColors;
-    hla=legend(La,cellfun(@(n)(num2str(n)), string_channels(sel_channels), 'UniformOutput', false));
+    hla=legend(La,cellfun(@(n)(num2str(n)), remove_metal, 'UniformOutput', false));
     
     %Define the location of the legend
     set(hla, 'Location','South');
-    set(hla,'FontSize',8,'Interpreter','none');
+    set(hla,'FontSize',20,'Interpreter','none');
     
 end
 
