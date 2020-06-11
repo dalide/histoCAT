@@ -76,9 +76,9 @@ if length(tiff_matrix{1,imh})<=6
         %selected
         if length(tiff_matrix{1,imh}) ~= 1
             disp('Applying contrast to image to display all markers')
-            intensemask =  imadjust(tiffimage_read, stretchlim(tiffimage_read(tiffimage_read>0)));
+            intensemask =  tiffimage_read;%imadjust(tiffimage_read, stretchlim(tiffimage_read(tiffimage_read>0)));
         else
-            intensemask =  imadjust(tiffimage_read,stretchlim(tiffimage_read(tiffimage_read>0)));%tiffimage_read;
+            intensemask =  tiffimage_read;%imadjust(tiffimage_read,stretchlim(tiffimage_read(tiffimage_read>0)));%tiffimage_read;
         end
         
         %Set the alphadata of the RGB image to the adjusted grayimage

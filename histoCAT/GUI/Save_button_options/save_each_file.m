@@ -7,10 +7,6 @@ global Mask_all
 
 custom_gatesfolder = retr('custom_gatesfolder');
 
-ImageId = {};
-SampleId = {};
-TotalArea = {};
-
 fcs_folder = fullfile(custom_gatesfolder, 'fcs');
 if ~exist(fcs_folder,'dir')
     mkdir(fcs_folder)
